@@ -1,1 +1,0 @@
-Java is a pass by value programming language, because when you pass an argument to a method, you're actually passing a copy of the value of the variable, not the variable itself.

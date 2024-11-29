@@ -1,4 +1,4 @@
-package aims.disc;
+package aims.media;
 
 public class DigitalVideoDisc {
     private static int nbDigitalVideoDiscs = 100001;
@@ -109,8 +109,12 @@ public class DigitalVideoDisc {
         this.cost = cost;
     }
 
-    public int getID() {
+    public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     @Override

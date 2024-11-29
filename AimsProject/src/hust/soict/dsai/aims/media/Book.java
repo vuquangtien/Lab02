@@ -10,11 +10,16 @@ public class Book extends Media{
     private float cost;
     private List<String> authors = new ArrayList<String>();
     
-    public Book() {}
+    public Book() {
+        super();
+    }
 
-    public Book(int id, String title, String category, float cost, ArrayList<String> authors) {
+    public Book(String title) {
+        super(title);
+    }
+
+    public Book(String title, String category, float cost, ArrayList<String> authors) {
         super(title, category, cost);
-        this.id = id;
         this.authors = authors;
     }
 
@@ -45,15 +50,44 @@ public class Book extends Media{
         }
     }
 
-    public int getID() {return id;}
-    public String getTitle() {return title;}
-    public String getCategory() {return category;}
-    public float getCost() {return cost;}
-    public List<String> getAuthors() {return authors;}
+    public int getId() {
+        return id;
+    }
 
-    public void setID(int id) {this.id = id;}
-    public void setTitle(String title) {this.title = title;}
-    public void setCategory(String category) {this.category = category;}
-    public void setCost(float cost) {this.cost = cost;}
-    public void setAuthor(List<String> authors) {this.authors = authors;}
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public float getCost() {
+        return cost;
+    }
+
+    public void setCost(float cost) {
+        this.cost = cost;
+    }
+
+    public List<String> getAuthors() {
+        return authors;
+    }
+
+    public void setAuthors(List<String> authors) {
+        this.authors = authors;
+    }
+
 }

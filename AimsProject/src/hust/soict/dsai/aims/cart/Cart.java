@@ -1,6 +1,6 @@
 package aims.cart;
 
-import aims.disc.DigitalVideoDisc;
+import aims.media.DigitalVideoDisc;
 
 public class Cart {
     private static final int MAX_NUMBERS_ORDERED = 20;
@@ -66,7 +66,7 @@ public class Cart {
     public void searchByID(int id) {
         boolean found = false;
         for (int i = 0; i< qtyOrdered; i++) {
-            if (itemsOrdered[i].getID() == id) {
+            if (itemsOrdered[i].getId() == id) {
                 System.out.println(itemsOrdered[i].toString());
                 found = true;
             }

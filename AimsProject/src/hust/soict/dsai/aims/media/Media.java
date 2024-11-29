@@ -24,6 +24,14 @@ public abstract class Media {
         this.category = category;
         this.cost = cost;
     }
+
+    public String getDetail() {
+        return "DVD - " + getId()
+                + " - " + getTitle() 
+                + " - " + getCategory() 
+                + " - :" + getCost() + " $";
+    }
+
     public int getId() {
         return id;
     }
@@ -49,4 +57,11 @@ public abstract class Media {
         this.cost = cost;
     }
 
+    @Override
+    public String toString() {
+        return "Media [id=" + id + 
+            ", title=" + title + 
+            ", category=" + category + 
+            ", cost=" + cost + "]";
+    }
 }

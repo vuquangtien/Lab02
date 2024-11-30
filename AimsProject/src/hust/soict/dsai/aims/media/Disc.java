@@ -1,8 +1,8 @@
 package aims.media;
 
 public abstract class Disc extends Media{
-    private int length;
-    private String director;
+    protected int length;
+    protected String director;
 
     public Disc() {
         super();

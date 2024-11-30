@@ -1,0 +1,41 @@
+QUESTION: 
+Alternatively, to compare items in the cart, instead of using Comparator, we can use the 
+Comparable interface and override the compareTo()method. You can refer to the Java docs to see the 
+information of this interface. 
+Suppose we are taking this Comparable interface approach.
+- What class should implement the Comparable interface?
+ANSWER:
+The class that should implement the Comparable interface is the Media class.
+
+- In those classes, how should you implement the compareTo()method be to reflect the ordering that we 
+want?
+ANSWER:
+In the Media class, the compareTo() method should be implemented to compare media items based on the 
+desired ordering. For example, if we want to order media items by title, we can compare their titles 
+using the compareTo() method. If we want to order by cost, we can compare their costs in the compareTo() method.
+
+- Can we have two ordering rules of the item (by title then cost and by cost then title) if we use this 
+Comparable interface approach?
+ANSWER:
+No, with the Comparable interface approach, we can only have one natural ordering rule for the items. We cannot 
+have two different ordering rules (e.g., by title then cost and by cost then title) using the Comparable interface alone.
+
+- Suppose the DVDs has a different ordering rule from the other media types, that is by title, then decreasing 
+length, then cost. How would you modify your code to allow this?
+ANSWER:
+To allow a different ordering rule for DVDs, you can create a subclass of the Media class specifically for DVDs, such as 
+DigitalVideoDisc. In the DigitalVideoDisc class, you can override the compareTo() method to implement the desired ordering 
+rule (by title, decreasing length, then cost). This way, DVDs will have their own custom ordering rule while other media 
+types follow the default ordering rule specified in the Media class.
+
++---------+------------+
+|  Color  |    Code    |
++---------+------------+
+| Red     | \u001B[31m |
+| Green   | \u001B[32m |
+| Yellow  | \u001B[33m |
+| Blue    | \u001B[34m |
+| Purple  | \u001B[35m |
+| Skyblue | \u001B[36m |
+| White   | \u001B[37m |
++---------+------------+

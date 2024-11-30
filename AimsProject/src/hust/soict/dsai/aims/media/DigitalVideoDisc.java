@@ -10,25 +10,18 @@ public class DigitalVideoDisc extends Disc implements Playable{
         super(title, category, cost);
     }
 
-    public DigitalVideoDisc(String title, String category, String director,  float cost) {
+    public DigitalVideoDisc(String title, String category, float cost, String director) {
         super(title, category, cost, director);
     }
 
-    public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
+    public DigitalVideoDisc(String title, String category, float cost, String director, int length) {
         super(title, category, cost, length, director);
     }
 
     public void play() {
-        System.out.println("Playing DVD: " + getTitle());
-        System.out.println("DVD length: " + getLength() + " minutes");
-    }
-
-    public String getDetail() {
-        return "DVD - " + getTitle() 
-                + " - " + getCategory() 
-                + " - " + getDirector() 
-                + " - " + getLength() 
-                + " - :" + getCost() + " $";
+        System.out.println("\n\u001B[33mPLAY THE MEDIA\u001B[37m");
+        System.out.println(" - Playing DVD : " + getTitle());
+        System.out.println(" - DVD length  : " + getLength() + " minutes");
     }
 
     public boolean search(String title) {
@@ -47,5 +40,24 @@ public class DigitalVideoDisc extends Disc implements Playable{
             }
         }
         return true;
+    }
+
+    @Override
+    public String toString() {
+        // return "DigitalVideoDisc [id=" + id + ", title=" + title + ", category=" 
+        //     + category + ", cost=" + cost + ", director=" + director + ", length=" + length + "]";
+        return "\n\u001B[33m------ DIGITAL VIDEO DISC ------\n\u001B[37m" + 
+               " - ID      : " + id + "\n" + 
+               " - Title   : " + title + "\n" + 
+               " - Category: " + category + "\n" + 
+               " - Cost    : " + cost + "\n" + 
+               " - Director: " + director + "\n" + 
+               " - Length  : " + length + "\n" +
+               "--------------------------------\n";
+    }
+
+    @Override
+    public String toBackupString() {
+        return id + "," + title + "," + category + "," + cost + "," + director + "," + length;
     }
 }

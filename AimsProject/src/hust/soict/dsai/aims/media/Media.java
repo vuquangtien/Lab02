@@ -1,7 +1,8 @@
 package aims.media;
+import java.util.Comparator;
 
-public abstract class Media {
-    protected static int nbMedias = 100001;
+public abstract class Media implements Comparable<Media>{
+    protected static int nbMedias = 100000;
     protected int id;
     protected String title;
     protected String category;
@@ -26,11 +27,23 @@ public abstract class Media {
     }
 
     public String getDetail() {
-        return "DVD - " + getId()
+        return "Media - " + getId()
                 + " - " + getTitle() 
                 + " - " + getCategory() 
-                + " - :" + getCost() + " $";
+                + " - " + getCost() + "$";
     }
+
+    public String toBackupString() {
+        return id + ";" + title + ";" + category + ";" + cost;
+    }
+
+    @Override 
+    public int compareTo(Media other) {
+        return this.title.compareTo(other.title);
+    }
+
+    public static final Comparator<Media> COMPARE_BY_TITLE_COST = new MediaComparatorByTitleCost();
+    public static final Comparator<Media> COMPARE_BY_COST_TITLE = new MediaComparatorByCostTitle();     
 
     public int getId() {
         return id;
@@ -58,10 +71,14 @@ public abstract class Media {
     }
 
     @Override
-    public String toString() {
-        return "Media [id=" + id + 
-            ", title=" + title + 
-            ", category=" + category + 
-            ", cost=" + cost + "]";
+    public boolean equals(Object o) {
+        if (o == this) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Media other = (Media) o; 
+        return getTitle().equals(other.getTitle());
     }
 }

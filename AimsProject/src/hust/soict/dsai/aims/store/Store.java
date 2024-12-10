@@ -1,4 +1,4 @@
-package store;
+package aims.store;
 
 import aims.media.Media;
 import java.util.ArrayList;
